@@ -1,0 +1,204 @@
+cash My Prop
+
+Database :   dealzarabia_db
+
+Admin: 	'Super Admin' -- Admin 		'Sub Admin' -- Admin
+
+8235856914
+
+Session Prefix:    		hcap_
+
+Session for Admin 
+=================
+'HCAP_ADMIN_LOGGED_IN'			'HCAP_ADMIN_ID'					'HCAP_ADMIN_TITLE'
+'HCAP_ADMIN_FIRST_NAME'			'HCAP_ADMIN_MIDDLE_NAME'		'HCAP_ADMIN_LAST_NAME'
+'HCAP_ADMIN_EMAIL'				'HCAP_ADMIN_MOBILE'				'HCAP_ADMIN_IMAGE'
+'HCAP_ADMIN_ADDRESS'			'HCAP_ADMIN_CITY'				'HCAP_ADMIN_STATE'
+'HCAP_ADMIN_COUNTRY'			'HCAP_ADMIN_ZIPCODE'			'HCAP_ADMIN_TYPE'
+
+'HCAP_ADMIN_CURRENT_PATH'		'HCAP_ADMIN_USER_TYPE' 			'HCAP_ADMIN_LAST_LOGIN'			
+
+Cookie for Admin 
+=================
+'HCAP_ADMIN_LOGIN_TOKEN' 		'HCAP_ADMIN_REFERENCE_PAGES'
+
+
+
+Database				dealzarabia_db 
+db.createUser( { user: "dealzarabia_db", pwd: "DEALZARABIA@11042022", roles: [ { role: "dbOwner", db: "dealzarabia_db" } ] } )
+
+Id start point is 						100000000000001
+
+
+
+Property ID  CMP001  -after verify show property id.
+
+Search   --  area, 
+
+
+
+Tables  for Super-admin 
+
+hcap_counters					    		created	
+hcap_title_count							created
+
+subadmin
+========
+	hcap_admin  							created	
+	hcap_admin_login_attempt  				created		
+	hcap_admin_login_log  					created			
+	hcap_admin_module						created		
+	hcap_admin_permissions					created 
+	hcap_admin_department					created 
+	hcap_admin_designation					created 
+
+
+settings
+========
+	hcap_homepage_slider					created
+	hcap_innerpage_banner					created
+	hcap_innerpage_seo						created
+	hcap_general							created				Make change according to front design
+
+website
+========
+	hcap_about_us							created				Make change according to front design
+	hcap_contactus							created				Make change according to front design
+	
+
+Error Message Start No 					1001
+Success Message Start No 				10001
+
+
+
+Admin Modules
+=============	
+
+subadmin
+========
+		department							Done
+		designation							Done
+		users								Done
+
+
+setting
+========
+		dashboard							Done
+		homepageslider						Done
+		innerpagebanner						Done
+		pageseo								Done
+		general								Done				Make change according to front design
+		
+		
+setting
+========
+		dashboard							Done
+		aboutus								Done				Make change according to front design	
+		contactus							Done				Make change according to front design	
+		
+
+
+
+
+check hcap_ADMIN_CURRENT_PATH 
+
+Base url:  			
+
+Apikey: 			md5("healthcareapp".date('Y-m-d')) 		date format (YYYY-MM-DD)
+Apidate: 			Current date 	  ex:- 2020-10-15 (YYYY-MM-DD)
+
+Apikey:7197ca96b6dd890243486cf2b8288ca9
+Apidate:2021-11-08
+
+
+
+Base url:  			https://apkconnectlab.com/healthcareapp/api/
+
+Files Base url:  	https://apkconnectlab.com/healthcareapp/
+
+Apikey: 			md5("healthcareapp".date('Y-m-d')) 		date format (YYYY-MM-DD)
+Apidate: 			Current date 	  ex:- 2020-10-15 (YYYY-MM-DD)
+Apilanguage: 		Current language  ex:- en/hi 				set default  en
+Apitimezone: 		Current tomezone  ex:- 'Asia/India' 		set default  'Asia/India'
+
+Apicurrency: 		Current currency  ex:- INR 	set default  INR
+Apicurrencyvalue: 	Current currency value  set default  1
+
+Apidevicetype: 		Android/IOS
+Apidevicelat: 		Current latitude
+Apidevicelong: 		Current longitude
+Apideviceid: 		Device id if available
+
+Apicurrdate: 		Current date in current timezone	ex:- 2020-10-15			date format (YYYY-MM-DD)
+Apicurrtime: 		Current time in current timezone time convert to UTC and send 	ex:- 1602745108			UTC time
+
+Apitoken: 			Get token after user login then pass that token in all api
+
+
+Admin Details
+=============
+URL: https://apkconnectlab.com/healthcareapp/admin
+Email: info@healthcareapp.com
+Pass: 123456
+PIN: 4321
+
+Kb1odfBwdZ6PnGppAwT9iBWpWUwJjRGW
+
+DOCUMENTATION
+=============
+Healthcare App | DB Structure						https://docs.google.com/spreadsheets/d/16sgXMOWt53QstbBBl-QjrAfZANc0Tcm2KeAHW8QcxIg/edit?usp=sharing
+
+Healthcare App | API | Android IOS App 				https://docs.google.com/spreadsheets/d/14-n2-0z9V8hpbL21LSUpgeD82d2ARuhnLBvdAjV2D6M/edit?usp=sharing		
+
+
+
+db.hcap_inspector.updateOne({"inspector_id": NumberLong(100000000000001)},{ $set:{"inspector_password":"3k0yKmnCm7cAMLNPP14Ot/gJVRkLV2OjQQrTICmWwYloOStJanJEVnB1RkRpVGdxYXY5WkFQeEZISFhJZHRtTUJRPT0="}})
+
+
+
+
+
+
+Dashboard
+
+Auction
+	All Auction
+	Auctions Closing 3 Days
+	Auctions Closing 7 Days
+	Live Auctions
+	Closed Auctions
+
+Seller
+	All Seller
+	Pending Request
+
+Buyer
+	All Buyer
+	Pending Request
+	Top Buyers
+
+Inspector
+	All Inspectors
+	Property Assigned
+	Pending Request
+
+
+Website
+	About Us
+	Contsct Us
+	Home Page Slider
+	Inner Page Banner
+	Page SEO
+	General Social Icons
+	Term & Conditions
+	Privacy Polices
+Report
+
+Sub Admin
+	Seller Approvals
+	Buyer Approvals
+	Property Manager
+	Inspector
+	Website Manager
+	Auction Manager
+

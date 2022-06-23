@@ -1,0 +1,127 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Products extends CI_Controller {
+public function  __construct() 
+{ 
+	parent:: __construct();
+	$this->load->model(array('geneal_model','common_model'));
+	$this->lang->load('statictext','front');
+} 
+/***********************************************************************
+** Function name 	: index
+** Developed By 	: AFSAR AlI
+** Purpose 			: This function used for index
+** Date 			: 13 APRIL 2022
+** Updated By		:
+** Updated Date 	: 
+************************************************************************/ 	
+public function index()
+{  
+	$data 					=	array();
+
+	/*$tbl 					=	'da_homepage_slider';
+	$where 					=	['page' => 'Homeslider'];
+	$data['homeSlider']		=	$this->geneal_model->getData($tbl, $where,[]);
+
+	$tbl 					=	'da_homepage_slider';
+	$where 					=	['page' => 'Homebanner'];
+	$data['homeBanner']		=	$this->geneal_model->getData($tbl, $where,[]);
+
+	$tbl 					=	'da_products';
+	$where 					=	['status' => 'A'];
+	$order 					=	['creation_date' => 'desc'];
+	$data['closing_soon']	=	$this->geneal_model->getData($tbl, $where, $order);
+
+	$tbl 					=	'da_products';
+	$where 					=	['status' => 'A'];
+	$order 					=	['creation_date' => 'desc'];
+	$data['closing_soon']	=	$this->geneal_model->getData($tbl, $where, $order);
+
+	$tbl 					=	'db_campaigns';
+	$where 					=	['status' => 'A'];
+	$order 					=	['creation_date' => 'desc'];
+	$data['campaigns']		=	$this->geneal_model->getData($tbl, $where, $order);
+
+	$tbl 					=	'da_products';
+	$where 					=	['status' => 'A', 'stock' => '0' ];
+	$order 					=	['creation_date' => 'desc'];
+
+	$data['outOfStock']	=	$this->geneal_model->getData($tbl, $where, $order);*/
+
+	$this->load->view('productDetails',$data);
+} // END OF FUNCTION
+
+/***********************************************************************
+** Function name 	: productDetails
+** Developed By 	: AFSAR AlI
+** Purpose 			: This function used for index
+** Date 			: 13 APRIL 2022
+** Updated By		:
+** Updated Date 	: 
+************************************************************************/ 	
+public function productDetails($id='',$sharedDetails='')
+{  
+	if($sharedDetails):
+		$sharedDatas    	= 	base64_decode($sharedDetails);
+		$sharedData    		= 	explode('_',$sharedDatas);	
+		$this->session->set_userdata('SHARED_USER_ID', $sharedData[0]);
+		$this->session->set_userdata('SHARED_USER_REFERRAL_CODE', $sharedData[1]);
+		$this->session->set_userdata('SHARED_PRODUCT_ID', base64_decode($id));
+		redirect(base_url('product-details/'.$id));
+	endif;
+
+	$data 					=	array();
+
+	$tbl 					=	'da_products';
+	$where 					=	['products_id' => (int)base64_decode($id) ];
+	$data['products']		=	$this->geneal_model->getOnlyOneData($tbl, $where);
+
+	$data['page']			=	$data['products']['title'];
+
+	$tbl 					=	'da_prize';
+	$where 					=	['product_id' => (int)base64_decode($id) ];
+	$data['prize']			=	$this->geneal_model->getOnlyOneData($tbl, $where);
+	//print_r($data['prize']); die();
+
+	$prowhere['where']						=	array('users_id'=>(int)$this->session->userdata('DZL_USERID'),'product_id'=>(int)base64_decode($id));
+	$data['prodData']						=	$this->common_model->getData('single','da_wishlist',$prowhere);
+
+	/*echo "<pre>";
+	print_r($prowhere);print_r($data['prodData']); die();*/
+
+	$this->load->view('productDetails',$data);
+} // END OF FUNCTION
+
+/* * *********************************************************************
+	 * * Function name : addtowishlist
+	 * * Developed By : Ravi Negi
+	 * * Purpose  : This function use for wishlist adding
+	 * * Date : 08 SEP 2021
+	 * * **********************************************************************/
+	public function addtowishlist()
+	{	
+		$users_id								=	$this->session->userdata('DZL_USERID');
+		$product_id                				=   $this->input->post('product_id');
+
+		$prowhere['where']						=	array('users_id'=>(int)$users_id,'product_id'=>(int)$product_id);
+		$prodData								=	$this->common_model->getData('single','da_wishlist',$prowhere);
+		//echo '<pre>';print_r($product_id);die;
+		$param['users_id']						=	(int)$users_id;
+		$param['product_id']					=	(int)$product_id;
+		$param['creation_date']					=   date('Y-m-d H:i');
+		$param['creation_ip']					=   $this->input->ip_address();
+
+		if($prodData == ""):
+			$param['wishlist_id']				=	(int)$this->common_model->getNextSequence('da_wishlist');
+			$param['wishlist_product']        	=   'Y';
+			$result['wishlistData']				=	$param;
+			$this->common_model->addData('da_wishlist',$param);
+			echo "addedtowishlist";die;
+		else:
+			$this->common_model->deleteData('da_wishlist','product_id',(int)$product_id);
+			echo "removedfromwishlist";die;
+		endif;
+	}
+
+}

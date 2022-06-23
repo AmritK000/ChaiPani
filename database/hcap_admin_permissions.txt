@@ -1,0 +1,43 @@
+module_id
+module_name
+module_display_name
+module_orders
+module_icone
+
+admin_id
+
+view_data
+add_data
+edit_data
+delete_data
+
+first_data : {
+                module_id
+                module_name
+                module_display_name
+                module_orders
+                module_icone
+
+				view_data
+				add_data
+				edit_data
+				delete_data
+                second_data : {
+                                module_id
+                                module_name
+                                module_display_name
+                                module_orders
+
+                                view_data
+								add_data
+								edit_data
+								delete_data
+                             }
+             }
+
+
+
+view_data	(Y, N)
+add_data	(Y, N)
+edit_data	(Y, N)
+delete_data	(Y, N)

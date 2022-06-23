@@ -1,0 +1,6 @@
+{_id, seq, encrypted}
+
+
+Use for autoincrement next id
+
+db.hcap_counters.insert({_id:"hcap_admin", seq:NumberLong(100000000000001)});

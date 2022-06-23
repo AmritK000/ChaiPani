@@ -1,0 +1,57 @@
+admin_id
+admin_title
+admin_first_name
+admin_middle_name
+admin_last_name
+admin_email        
+admin_phone
+admin_password
+admin_password_otp
+admin_image
+
+admin_address        
+admin_city
+admin_state
+admin_country
+admin_pincode
+
+/////////////////  FOR SUB ADMIN START
+department_id
+department_name
+designation_id
+designation_name
+/////////////////  FOR SUB ADMIN END
+
+admin_type ('Super Admin','Sub Admin')
+
+last_login_ip
+last_login_lat
+last_login_long
+last_login_date
+
+creation_ip
+creation_last
+creation_long
+creation_date
+created_by
+
+update_ip
+update_lat
+update_long
+update_date
+updated_by
+
+status ('A','I','B','D')
+
+
+
+
+Comments
+
+admin_type ('Super Admin'--Owner, 'Sub Admin'--Owner')
+status (A-Active, I-Inactive, B-Block, D-Delete)	
+
+
+db.hcap_admin.insert({admin_id:NumberLong(100000000000001), admin_title:"Super Admin", admin_first_name:"Healthcare", admin_middle_name:"", admin_last_name:"App", admin_email:"info@dealzarabia.com", admin_phone:NumberLong(9711882641), admin_password:"p463xNF7fS8o8UPG0kD+Y5qaa2AydMezs91+BD54LxZXcGxwdDJ0b3dhdjZuaEkyWXVtRm80SXk4T1I1bGc9PQ==", admin_password_otp:"", admin_image:"", admin_address:"F-77, Sector 56", admin_city:"Noida", admin_state:"UP", admin_country:"India", admin_pincode:"201309", department_id:0, department_name:"", designation_id:0, designation_name:"", admin_type:"Super Admin", last_login_ip:"", last_login_date:"", creation_ip:"127.0.0.1", creation_date:"1623655493", created_by:NumberLong(100000000000001), update_ip:"", update_date:"", updated_by:"", status:'A'});
+
+

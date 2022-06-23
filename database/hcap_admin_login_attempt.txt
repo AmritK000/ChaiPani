@@ -1,0 +1,10 @@
+login_attempt_id
+
+admin_id
+
+attempt_type	(Current,Old)
+attempt_count
+attempt_datetime
+attempt_ip
+attempt_lat
+attempt_long

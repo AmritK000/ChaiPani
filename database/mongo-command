@@ -1,0 +1,280 @@
+Upgrade mongo version
+https://www.datainmotion.de/howto-update-of-a-mongo-3-2-x-standalone-to-a-3-6/
+
+OPEN ROBOMONGO
+cd /usr/local/bin/robomongo/bin
+./robomongo
+
+https://github.com/verkhoumov/codeigniter-mongodb-library/wiki
+
+https://github.com/bcit-ci/CodeIgniter/wiki/Using-MongoDB-in-Codeigniter
+
+Create Database 				use database_name
+Show all database 				show dbs
+Create user 					db.createUser( { user: "user_name", pwd: "password", roles: [ { role: "dbOwner", db: "database_name" } ] } )
+
+db.createUser( { user: "adminUser", pwd: "adminUserPassword", roles: [ { role: "dbOwner", db: "admin" } ] } )
+
+mongo -u adminUser -p --authenticationDatabase admin
+
+Create Collection				db.createCollection
+Show all collections 			show collections
+
+Get collection count 			db.getCollectionNames().length
+
+Count record in a table         db.tableName.count();
+
+db.stats()
+{
+        "db" : "test",
+        "collections" : 5,
+        "views" : 0,
+        "objects" : 14,
+        "avgObjSize" : 154.64285714285714,
+        "dataSize" : 2165,
+        "storageSize" : 98304,
+        "numExtents" : 0,
+        "indexes" : 5,
+        "indexSize" : 98304,
+        "ok" : 1
+}
+> db.stats().collections
+5
+
+Update command
+db.imrd_user.updateOne({"user_id": NumberLong(100000000000018)},{ $set:{"status":"A"}})
+
+db.imrd_user.updateOne({"user_id": NumberLong(100000000000018)},{ $set:{"status":"A"}})
+
+db.astro_mall_product.updateOne({"product_id": NumberLong(100000000000018)},{ $set:{"status":"A"}})
+
+Delete command
+db.imrd_user.remove({})
+
+drop table
+db.<table name>.drop();
+
+
+Drop all table
+var dbName = 'interviewerr';
+db.getSiblingDB(dbName).getCollectionNames().forEach(function(collName) {
+    if (!collName.startsWith("system.")) {
+        print("Dropping ["+dbName+"."+collName+"]");
+        db[collName].drop();
+    }
+})
+
+var dbName = 'bliss_Database';
+db.getSiblingDB(dbName).getCollectionNames().forEach(function(collName) {
+    if (!collName.startsWith("system.")) {
+        print("Dropping ["+dbName+"."+collName+"]");
+        db[collName].drop();
+    }
+})
+
+db.getCollectionNames().forEach(function(c) { if (c.indexOf("system.") == -1) db[c].drop(); })
+
+
+
+GET SINGLE FIELDS FROM TABLE
+db.imrd_transpost_route.find({},{"route_id":1})
+
+GET MULTIPLE FIELDS FROM TABLE
+db.imrd_transpost_route.find({},{"route_id":1,"route_status":1,"driver_assign":1,"vehicle_assign":1,"helper_assign":1,"stuent_assign":1})
+
+UPATE A SPECIFIC FIELDS
+db.imrd_transpost_route.update({"route_id":NumberLong(100000000000018)}, {$set: {"route_status":"Finished"}})
+
+UPDATE ULTIPLE FIELDS
+db.imrd_transpost_route.update({"route_id":NumberLong(100000000000002)}, {$set: {"driver_assign":"Y","vehicle_assign":"Y","helper_assign":"Y","stuent_assign":"Y"}});
+
+UDATE ULTIPLE ROWS OR RECODS 
+db.imrd_transpost_route.update({}, {$set: {"route_status":"Finished"}}, {multi:true})
+
+
+db.bliss_courses.update({"courseType" : ObjectId("612296a770f70e6f84230d2b")}, {$set: {"channel_name":"","token":"","uid":""}}, {multi:true})
+
+
+
+Export all database
+====================
+goto folder where dump all database and run command:   mongodump
+
+Export single database
+========================
+goto folder where dump single database and run command:   mongodump -d <database name>		mongodump -d therealastro
+
+Export single collection(table)
+====================================
+got folder where dump single table and run command:   mongoexport -d <database name> -c <collection name>  -o <export file name with .json extension>
+
+ mongoexport -d interviewerr -c inter_admin_service_type  -o inter_admin_service_type.json
+ mongoexport -d interviewerr -c inter_admin_sub_service_type  -o inter_admin_sub_service_type.json
+
+
+ mongoexport -d interviewerr -c inter_admin_country  -o astro_country.json
+ 
+ mongoexport -d interviewerr -c inter_admin_timezone  -o astro_timezone.json
+ 
+ 
+
+Import single database
+========================
+got folder where dump single database and run command:   mongostore -d <database name>      mongostore -d interviewerr			(mongorestore \dump) on server
+
+mongorestore dump-folder/
+
+
+
+
+
+Import single collection(table)
+====================================
+got folder where dump single table and run command:   mongoimport -d <database name> -c <collection name>  <import file name with .json extension>
+
+/Desktop/imrddb_mongo/dump/imrddbalgo$ mongoimport -d imrddbalgo -c employee employee.metadata.json
+
+mongoimport -d interviewerr -c inter_admin_service_type inter_admin_service_type.json
+mongoimport -d interviewerr -c inter_admin_sub_service_type inter_admin_sub_service_type.json
+
+mongoimport -d therealastro -c astro_country astro_country.json
+mongoimport -d therealastro -c astro_timezone astro_timezone.json
+
+
+db.slipkode_shop_cart_order.find({"creation_date":{ $gte:NumberLong("1566735149826"), $lt:NumberLong("1566739762850")}}).pretty();   show data in structure format
+
+
+restore all database
+=====================
+mongorestore --host localhost --port 27017  dump
+
+
+
+// $Fields =  array('$project' => array('_id'=>0,'user_id'=>1,'first_name'=>1,'last_name'=>1,'username'=>1,'tagline'=>'$personal_details.tagline','personal_details'=>'$personal_details.about_me','experience_details'=>'$experience_education.experience_details'));
+
+// $Query				=	array(array('$lookup'=> array('from' => 'inter_user_personal_details','localField' => 'user_id','foreignField'=> 'user_id','as' => 'personal_details')),array('$lookup'=> array('from' => 'inter_user_experience_education','localField' => 'user_id','foreignField'=> 'user_id','as' => 'experience_education')),$Fields);	
+
+// $interviewerrList		=	$this->common_model->getDataByMultipleAndCondition('inter_user',$Query);
+// echo 'aaaa'; print_r($interviewerrList); die;
+
+
+$Ffields 			=  	array('$project' => array('_id'=>0,'feedback_id'=>1,'service_buy_id'=>1,'service_id'=>1,'service_title'=>1,'service_slug'=>1,
+												  'feedback_date'=>1,'feedback_content'=>1,'feedback_professional_behaviour'=>1,'feedback_quality_of_work'=>1,
+												  'feedback_focused_to_deadline'=>1,'feedback_worth_having_my_services'=>1,'creation_date'=>1,
+												  'from_user_id'=>1,'from_user_name'=>'$from_user.username','from_user_display_name'=>'$from_user.display_name',
+												  'from_user_pic'=>'$from_user.profile_pic','from_user_type'=>'$from_user.user_type.usertype_name','from_user_tagline'=>'$from_user_details.tagline',
+												  'to_user_id'=>1,'to_user_name'=>'$to_name.username','to_user_display_name'=>'$to_name.display_name',
+												  'to_user_pic'=>'$to_name.profile_pic','to_user_type'=>'$to_name.user_type.usertype_name','to_user_tagline'=>'$to_user_details.tagline'));
+$FwhereCond			=	array(array('to_user_id'=>(int)$user_id),
+							  array('to_user_type'=>'Interviewer'));
+$FQuery				=	array(array('$lookup'=>array('from'=>'inter_user','localField'=>'from_user_id','foreignField'=>'user_id','as'=>'from_user')),
+							  array('$lookup'=>array('from'=>'inter_user_personal_details','localField'=>'from_user_id','foreignField'=>'user_id','as'=>'from_user_details')),
+							  array('$lookup'=>array('from'=>'inter_user','localField'=>'to_user_id','foreignField'=> 'user_id','as'=>'to_name')),
+							  array('$lookup'=>array('from'=>'inter_user_personal_details','localField'=>'to_user_id','foreignField'=> 'user_id','as'=>'to_user_details')),
+							  $Ffields,
+							  array('$match'=>array('$and'=>$FwhereCond)),
+							  array('$sort'=>array('feedback_date'=>-1)));	
+$feedbckData		=	$this->common_model->getDataByMultipleAndCondition('inter_user_feedback',$FQuery);
+
+
+db.inter_user_service.aggregate([
+ 
+{
+  $lookup:
+	{
+	from: "inter_user_services_buy",
+	localField:  "service_id",
+	foreignField: "service_id",
+	as: "embeddedData"
+	}
+},
+      {
+        "$project": {
+          "_id": 1,
+          "service_buy_id": "$service_id"
+        }
+      }
+])
+
+db.inter_user_service.aggregate([
+
+{
+     $lookup:
+       {
+         from: "inter_user_services_buy",
+         localField: "service_id",
+         foreignField: "service_id",
+         as: "serviceBuyData"
+       }
+  },
+  {
+     $lookup:
+       {
+         from: "inter_user_service_calender",
+         localField: "service_id",
+         foreignField: "service_id",
+         as: "serviceCalender"
+       }
+  },
+  {
+     $lookup:
+       {
+         from: "inter_user_service_feedback",
+         localField: "service_id",
+         foreignField: "service_id",
+         as: "serviceFeedback"
+       }
+  }
+      
+]).pretty();
+
+
+#################### to enter in the second child ################################
+db.hcap_admin_module.update(
+   { "first_data.module_name": "cms" },
+   {
+     $push: {
+       "first_data.$.second_data": {
+          $each: [ 
+            {
+            "module_id" : NumberLong(5697491005152525),
+            "module_name" : "websiteteam",
+            "module_display_name" : "Our Team",
+            "module_orders" : 11.0
+            }
+        ]
+       }
+     }
+   }
+)
+#################################################################################
+
+################### to add new module in admin's first data #####################
+db.hcap_admin_module.update(
+   { module_id: 100000000000004},
+   {
+     $addToSet: {
+       first_data:
+        {
+            "module_id" : NumberLong(100000004000003),
+            "module_name" : "specialization",
+            "module_display_name" : "Specialization",
+            "module_orders" : 3.0
+          }
+          
+     }
+   }
+)
+#################################################################################
+
+################# To change the particular field value in the admin particular module #####################
+db.drair_email_template.update(
+   { mail_type: "Contact Form Mail to Admin" },
+   {
+     $set: {
+       mail_template_id: 100000000000001,
+     }
+   }
+)
+#################################################################################################
+

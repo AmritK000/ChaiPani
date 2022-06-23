@@ -1,0 +1,750 @@
+<!Doctype html>
+<html lang="eng">
+<head>
+	<!-- Basic page needs -->	
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<?php include('common/head.php') ?>
+<style>
+.details .legend_product {
+    text-align: center;
+    padding: 0px 19px 19px;
+    width: 330px !important;
+    float: left;
+}
+.fa-share:hover{
+  color: #d12a2b !important;   
+}
+
+.fa-share:hover{
+  color: #d12a2b !important;   
+}
+.share i:hover {
+    color: #d12a2b !important;
+}
+.heart_icon{
+   color: rgb(209 209 209);
+   font-size: 20px !important;
+}
+.fa-share:hover{
+  color: #d12a2b !important;   
+}
+.share i:hover {
+    color: #d12a2b !important;
+}
+.heart_icon{
+   color: rgb(209 209 209);
+   font-size: 20px;
+}
+.fa-heart:hover {
+    color: #d12a2b !important;
+}
+.box {
+    width: 8%;
+    position: relative;
+    top: -30px;
+}
+
+ .box h2 {
+  display: block;
+  text-align: center;
+  color: black;
+  position: relative;
+top: -96px;
+    left: 13px;
+
+}
+.hearts {
+    float: left;
+    width: 20px;
+    padding-top: 15px;
+    position: relative;
+    left: -20px;
+}
+.textes {
+   
+    position: relative;
+    top: -95px;
+   left: -14px;
+    font-family: 'Open Sans', sans-serif;
+    
+    font-size: 14px;
+    font-weight: 600;
+    color: #031b26;
+}
+ .box .chart {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 108px;
+    height: 160px;
+    color: #300808;
+    top: 13px;
+    left: -16px;
+
+}
+.box .chart1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 108px;
+    height: 160px;
+    color: #300808;
+    top: 18px;
+}
+
+.box canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100%;
+}
+    .details .legend_product {
+text-align: center;
+padding: 0px 19px 19px;
+width: 378px;
+float: left;
+}
+.details .cart_1 {
+    background: #e72d2e00;
+    border: 2px solid #e72d2e;
+    padding: 6px 8px !important;
+    border-radius: 8px;
+    color: #212529e6;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin-right: 10px !important;
+}
+.details .date_item3 {
+    margin: 0px;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 30px;
+    text-align: center;
+}
+.details .cart_2:hover {
+    transition: 0.3s;
+    background: #e72d2e;
+    color: #fff;
+}
+.details .edit_cart {
+   background: #c42828 !important;
+    border: 1px solid #ec2d2f !important;
+    padding: 6px 25px;
+    border-radius: 8px;
+    color: #fff !important;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 0px;
+    width: 100%;
+}
+.edit_cart:hover {
+    background: #ffffff;
+    color: #e70909;
+}
+.details .cart_2 {
+    background: #e72d2e00;
+    border: 2px solid #e72d2e;
+    padding: 6px 8px !important;
+    border-radius: 8px;
+    color: #212529e6;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin-right: 10px !important;
+}
+.pencil{
+    max-width: 100%;
+    max-height: 100%;
+    padding-top: 34px;
+    padding-bottom: 22px;
+}
+.details .vl {
+    border-left: 1px solid rgb(209 209 209);
+    height: 338px !important;
+    position: relative;
+    top: 33px !important;
+    left: 9px!important;
+}
+.details .legend_product h2 {
+    margin: 0px;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    /* padding-left: 22px; */
+    max-width: 290px;
+    margin: auto;
+    text-align: center;
+}
+.details .vl_img {
+    position: absolute;
+    top: 46%;
+    left: 42%;
+}
+.details .fa-heart:before {
+    content: "\f004";
+    padding-right: 5px;
+    font-size: 26px;
+}
+.share {
+    content: "\f1e0";
+    color: rgb(209 209 209 / 53%);
+    font-size: 18px;
+    padding-left: 5px;
+}
+.details .fa-share-alt:before {
+    content: "\f1e0";
+    padding-right: 0px;
+    font-size: 18px;
+}
+.details .vl {
+border-left: 1px solid rgb(209 209 209);
+height: 339px;
+position: relative;
+top: 24px;
+left: -5px;
+}
+.edit_cart {
+   background:#c42828;
+    border: 1px solid #ec2d2f;
+    padding: 6px 25px;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 10px;
+    width: 100%;
+}
+.edit_cart:hover {
+    background: #ffffff;
+    color: #e70909;
+}
+.details .prize .prize_box p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px !important;
+    color: #1e1e1e !important;
+    margin: 0px;
+    text-align: center;
+}
+.white-btn:hover{
+    background: #d12a2b !important;
+     color: #fff !important;
+}
+.white-btn {
+    padding: 6px 15px;
+    border: 1px solid #e0e0e0 !important;
+    background: #fff !important;
+    color: #363636;
+    border-radius: 8px;
+    color: #363636;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+.default-btn {
+    background: #e72d2e00 !important;
+    border: 1px solid #d12a2b !important;
+    padding: 4px 25px !important;
+    border-radius: 8px;
+    color: #d12a2b !important;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+.default-btn:hover{
+ background:#d12a2b !important;
+    color:#fff !important;  
+}
+
+</style>
+</head>
+<body>
+<?php include('common/header.php') ?>
+<!-- details-->
+<div class="details">
+	<div class="container">
+		<div class="row" >
+			<div class="col-md-8">
+				<div class="row  border">
+					<div class="legend_product">
+						<img src="<?=base_url().@$products['product_image']?>" class="pencil">
+						<h2><?=@$products['title']?></h2>
+						<p> <?=@$products['description']?></p>
+					</div>
+				
+      				<div class="legend_product1">
+						<div class="vl"></div>
+						<div class="vl_img">
+							<?php
+						    $avlstock = $products['stock'] * 100 / $products['totalStock'];
+						    $remStick = 100 - $avlstock;
+							?>
+							<div class="box">
+    							<div class="chart" data-percent="<?=number_format($remStick,0)?>" ><?=number_format($remStick,0)?>%</div>
+  							</div>
+						</div>
+						<h2 class="textes">Sold Out</h2>
+          			</div>
+					<div class="legend_product">
+						<?php if(!empty($prize['prize_image'])){ ?>
+						<img src="<?=base_url().@$prize['prize_image']?>" class="pencil">
+						<?php }else{ ?>
+						<img src="<?=base_url().'/assets/img/NO_IMAGE.jpg'?>" class="pencil">
+						<?php } ?>
+						
+						<h2>Get a chance to win: <?=@$prize['title']?></h2>
+						<p><?=@$prize['description']?></p>
+						
+					</div>
+						<div class="hearts"><a href="#" class="heart_icon"><i class="far fa-heart heart_icon" title="Mark Favourite"></i></a>
+								<a href="#" class="share"><i class="fas fa-share" title="Share Campaigns" ></i></a>
+							</div>
+				</div>
+		</div>	
+	<div class="col-md-4 ">
+<div class="product_points">
+<div class="date_item">
+	<h2>Max draw date <?=date('d M, Y', strtotime($products['draw_date']))?></h2>
+	<p>or when the campaign is sold out, Whichever is earlier</p>
+</div>
+<div class="date_item1">
+	<div class="items_2">
+		<h2>Price</h2>
+		<p>inclusive Of VAT</p>
+	</div>
+	<div class="items_2">
+		<h3>AED <?=@number_format($products['adepoints'],2)?></h3>
+	</div>
+</div>
+<!-- <button class="default-btn addremove add_cart" data-id='<?=@$products['products_id']?>' id="add_cart">Add To Cart</button> -->
+
+<?php
+if($this->session->userdata('DZL_USERID')){
+	$wcon1['where'] = [	
+		'user_id' 	=> 	(int)$this->session->userdata('DZL_USERID'),
+		'id' =>	(int)$products['products_id'] 
+	];
+	$check = $this->geneal_model->getData2('count','da_cartItems',$wcon1);
+	if($check == 0){ ?>
+		<button class="default-btn addremove add_cart" data-id='<?=$products['products_id']?>' id="add_cart">Add To Cart</button>
+	<?php }else{ ?>
+		<button class=" addremove edit_cart" data-id='<?=$products['products_id']?>' id="add_cart">Add To Cart</button>
+	<?php }
+}else{ 
+	if(!empty($this->cart->contents())){
+		$check = $this->geneal_model->checkCartItems($products['products_id']);	
+	}else{
+		$check = 0;
+	}
+	if($check == 1){ //echo $check; ?>
+		<button class=" addremove edit_cart" data-id='<?=$products['products_id']?>' id="add_cart">Add To Cart</button> 
+	<?php }else{ //echo $check; ?>
+		<button class="default-btn  addremove add_cart" data-id='<?=$products['products_id']?>' id="add_cart">Add To Cart</button>
+<?php } }	?>
+
+<!-- <button class="default-btn addremove edit_cart" data-id='<?=@$products['products_id']?>' id="add_cart">Added To Cart</button> -->
+<div class="date_item3">
+<!--	<span><a  class="heart_icon" href="javascript:void();" name="wishlist" data-id="<?=$products['products_id']?>">
+	 <?php if($prodData):if($prodData['wishlist_product'] <> 'Y'):?>
+													<i class="far fa-heart" title="Add to Wishlist"></i> 
+												<?php else:?>
+													<i class="fas fa-heart" title="Remove from Wishlist"></i> 
+												<?php endif;?>
+											<?php else:?>
+												<i class="far fa-heart" title="Add to Wishlist"></i> 
+											<?php endif;?>
+	</a></span>
+	<span><a  href="#"><i class="fas fa-share" title="Share Campaigns" aria-hidden="true"></i> </a></span>
+	-->
+	
+</div>
+</div>
+</div>
+</div>
+	
+</div>
+
+<?php if(!empty($prize['prize1']) | !empty($prize['prize2']) | !empty($prize['prize3'])){ ?>
+
+
+<div class="prize">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-3 px-0">
+				<h3 class="default-heading">Prize Detail<br>For First Three Winners.</h3>	
+			</div>
+		<?php if(!empty($prize['prize1'])){ ?>
+		<div class="col-lg-3 col-3">
+			<div class="prize_box">
+				<h3 class="default-heading">Prize 1</h3>
+				<p>AED <?=@number_format($prize['prize1'],2)?> Cash</p>
+			</div>
+		</div>
+		<?php } ?>
+		<?php if(!empty($prize['prize2'])){ ?>
+		<div class="col-lg-3 col-3">
+			<div class="prize_box">
+				<h3 class="default-heading">Prize 2</h3>
+				<p>AED <?=@number_format($prize['prize2'],2)?> Cash</p>
+			</div>
+		</div>
+		<?php } ?>
+		<?php if(!empty($prize['prize3'])){ ?>
+		<div class="col-lg-3 col-3">
+      		<div class="prize_box">
+				<h3 class="default-heading">Prize 3</h3>
+				<p>AED <?=@number_format($prize['prize3'],2)?> Cash</p>
+			</div>
+		</div>
+		<?php } ?>
+		</div>
+	</div>
+</div>
+<?php }?>
+<!-- 
+<div class="product">
+	<div class="container">
+	<div class="row">
+			<div class="col-lg-12 col-12">
+				<h3 class="default-heading">Buy a Blanco Pencil and get a chance to win<br>MacBook Air Bundle</h3>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="tab">
+	<div class="container">
+	<div class="row">
+			<div class="col-lg-12 col-12 px-0">
+				<div class="tabs_content">
+				  <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'London')">Prize Details</button>
+				  <button class="tablinks" onclick="openCity(event, 'Paris')">Product Details</button>
+             </div>
+
+			<div id="London" class="tabcontent">
+			  <p>This unique watch symbolizes a fusion of time, culture and development through its combination of composite concrete and actual desert sand. Limited to just 100 pieces, the “Desert Fusion” watch was produced in celebration of the UAE’s 50th anniversary of its founding. The concrete of the case and the bezel recalls the futuristic architecture of UAE cities, while the orange-tinted sand on the dial symbolizes its vast expanses of desert. Together they form a composition of contrasting and complementary colours, prolonged by a camel leather strap. As for the sapphire crystal, it bears a special “Year of the Fiftieth” inscription.</p>
+			</div>
+
+			<div id="Paris" class="tabcontent">
+			  <p>This unique watch symbolizes a fusion of time, culture and development through its combination of composite concrete and actual desert sand. Limited to just 100 pieces, the “Desert Fusion” watch was produced in celebration of the UAE’s 50th anniversary of its founding. The concrete of the case and the bezel recalls the futuristic architecture of UAE cities, while the orange-tinted sand on the dial symbolizes its vast expanses of desert. Together they form a composition of contrasting and complementary colours, prolonged by a camel leather strap. As for the sapphire crystal, it bears a special “Year of the Fiftieth” inscription.</p> 
+			</div>
+          </div>
+		</div>
+	</div>
+</div>
+		<div class="sepcific">
+	<div class="container px-0">
+	<div class="row ">
+		<div class="col-md-12 ">
+		<div class="profiles">
+			<h4 class="information" >Specifications</h4>
+			</div>
+		</div>
+		</div>
+		<div class="row user">
+		
+		<div class="col-md-3 px-0">
+			
+			<div class="sidenav">
+              
+				<ul>
+					
+					<li><a href="#">Case</a></li>
+					<li><a href="#">Diameter</a></li>
+					<li><a href="#">Dial</a></li>
+					<li><a href="#">Functions</a></li>
+					<li><a href="#">Strap</a></li>
+					<li><a href="#">Power</a></li>
+					<li><a href="#">Limited</a></li>
+					<li><a href="#">Resistance</a></li>
+					
+				</ul>
+			</div>
+		
+		</div>
+			<div class="col-md-9 px-0">
+			
+		<div class="sidenav1">
+				<ul>
+					<li><a href="#">Composite concrete & sapphire back</a></li>
+					<li><a href="#">45mm</a></li>
+					<li><a href="#">Desert sand with sapphire</a></li>
+					<li><a href="#">Hours, minutes, chronograph</a></li>
+					<li><a href="#">Camel leather and black rubber</a></li>
+					<li><a href="#">42 hours reserve</a></li>
+					<li><a href="#">100 pieces</a></li>
+					<li><a href="#">Water-resistant to 50 metres</a></li>
+				</ul>
+			</div>
+		
+					
+				</div>
+			</div>
+		</div>
+	</div> -->
+</div>
+<!--footer-->
+<?php include('common/footer.php') ?>
+<?php include('common/footer_script.php') ?>
+<!-- Animation Js -->
+<script>
+	AOS.init({
+	  duration: 1200,
+	})
+</script>
+<script type="text/javascript">
+	function openCity(evt, cityName) {
+var i, tabcontent, tablinks;
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i < tabcontent.length; i++) {
+tabcontent[i].style.display = "none";
+}
+tablinks = document.getElementsByClassName("tablinks");
+for (i = 0; i < tablinks.length; i++) {
+tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+document.getElementById(cityName).style.display = "block";
+evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+</script>
+<script>
+/* TOP Menu Stick
+--------------------- */
+var s = $("#sticker");
+var pos = s.position();					   
+$(window).scroll(function() {
+	var windowpos = $(window).scrollTop();
+	if (windowpos > pos.top) {
+	s.addClass("stick");
+	} else {
+		s.removeClass("stick");	
+	}
+});
+</script>
+<!-- Main Slider Js -->
+<script>
+jQuery("#main-carousel").owlCarousel({
+autoplay: true,
+loop: true,
+margin: 0,
+transitionStyle : "goDown",
+responsiveClass: true,
+autoHeight: true,
+autoplayTimeout: 7000,
+smartSpeed: 800,
+lazyLoad: false,
+nav: false,
+dots:true,
+responsive: { 
+0: { items: 1 },
+600: { items: 1 },
+1024: { items: 1 },
+1366: { items: 1 }
+}
+});
+</script>
+<!-- Home Closing Soon Slider -->
+<script>
+jQuery("#closing-soon").owlCarousel({
+autoplay: true,
+lazyLoad: true,
+loop: true,
+margin: 20,
+responsiveClass: true,
+autoHeight: true,
+autoplayTimeout: 7000,
+smartSpeed: 800,
+dots: false,
+nav: true,
+responsive: {
+0: { items: 1 },
+600: { items: 3 },
+1024: { items: 4 },
+1366: { items: 4 }
+}
+});
+</script>
+<!-- Home Sold Out Slider -->
+<script>
+jQuery("#sold-out").owlCarousel({
+autoplay: true,
+lazyLoad: true,
+loop: true,
+margin: 20,
+responsiveClass: true,
+autoHeight: true,
+autoplayTimeout: 7000,
+smartSpeed: 800,
+dots: false,
+nav: true,
+responsive: {
+0: { items: 1 },
+600: { items: 3	}, 
+1024: { items: 4 },
+1366: { items: 4 }
+}
+});
+</script>
+<!-- Testimonial Slider -->
+<script>
+var $owl = $('#testimonial');
+
+$owl.children().each( function( index ) {
+$(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
+});
+
+$owl.owlCarousel({
+center: true,
+loop: true,
+dots:true,
+nav:true,
+responsive: {
+0: { items: 1 },
+600: { items: 1 },
+800: { items: 3	},
+1366: { items: 3 }
+}
+});
+$(document).on('click', '.owl-item>div', function() {
+// see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
+var $speed = 300;  // in ms
+$owl.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
+});
+</script>
+<!-- Header Dropdown -->
+<script>
+$('.dropdown > .caption').on('click', function() {
+$(this).parent().toggleClass('open');
+});
+
+// $('.price').attr('data-currency', 'RUB');
+
+$('.dropdown > .list > .item').on('click', function() {
+$('.dropdown > .list > .item').removeClass('selected');
+$(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
+
+if ($(this).data("item") == "RUB") {
+console.log('RUB');
+} else if ($(this).data("item") == "UAH") {
+console.log('UAH');
+} else {
+console.log('USD');
+}
+});
+
+$(document).on('keyup', function(evt) {
+if ((evt.keyCode || evt.which) === 27) {
+$('.dropdown').removeClass('open');
+}
+});
+
+$(document).on('click', function(evt) {
+if ($(evt.target).closest(".dropdown > .caption").length === 0) {
+$('.dropdown').removeClass('open');
+}
+});
+</script>
+
+<script>
+$(document).ready(function(){
+$(document).on("click", "button[id='add_cart']", function () {
+var product_id = $(this).attr('data-id');
+var curobj = $(this);
+curobj.html("Added To Cart");
+
+curobj.addClass('edit_cart');
+curobj.removeClass('add_cart');
+
+var ur = '<?=base_url()?>';
+$.ajax({
+url : ur+ "shopping_cart/add",
+method: "POST", 
+data: {product_id: product_id},
+success: function(data){
+//alert(data);
+var A = '<b><i class="fas fa-shopping-cart"></i>('+data+')</b>'
+//var B = '<button class="default-btn white-btn">Added to cart </button>'
+$('#cartA').empty().append(A)
+//$('#'+product_id).empty().append(B)
+}
+});
+});
+
+});
+</script>
+<script>
+$(document).ready(function () {
+	$(document).on("click", "a[name='wishlist']", function () {
+		var userId = '<?php echo $this->session->userdata('DZL_USERID')?>';
+		if(userId == '')
+		{
+			alert('Please login in order to add to wishlist');
+			redirect('login');
+		}
+		var product_id = $(this).attr('data-id');
+		var curobj = $(this);
+		var ur = '<?=base_url()?>';
+		$.ajax({
+			url: ur + 'add-to-wishlist',
+			type: "POST",
+			data: {
+				'product_id': product_id
+			},
+			cache: false,
+			success: function (result) {//alert(result);
+				if (result == 'addedtowishlist') {
+					curobj.html('<i class="fas fa-heart"></i> Remove from Wishlist');
+
+				} else if (result == 'removedfromwishlist') {
+					curobj.html('<i class="far fa-heart"></i> Add to Wishlist');
+
+
+				}
+
+			}
+		});
+
+	});
+});
+</script>
+<script>
+$(function() {
+  $('.chart').easyPieChart({
+    size: 70,
+    barColor: "#ce292a",
+    
+    lineWidth: 6,
+    trackColor: "#98fb987d",
+    lineCap: "circle",
+    animate: 2000,
+  });
+});
+    $(function() {
+  $('.chart1').easyPieChart({
+    size: 70,
+    barColor: "#ce292a",
+    
+    lineWidth: 6,
+    trackColor: "#98fb987d",
+    lineCap: "circle",
+    animate: 2000,
+  });
+});
+</script>
+</script>
+</body>
+</html>

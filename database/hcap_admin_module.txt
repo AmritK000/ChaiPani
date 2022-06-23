@@ -1,0 +1,249 @@
+module_id
+module_name
+module_display_name
+module_orders
+module_icone
+
+first_data : {
+                module_id
+                module_name
+                module_display_name
+                module_orders
+                module_icone
+				
+                second_data : {
+                                module_id
+                                module_name
+                                module_display_name
+                                module_orders
+                             }
+             }
+
+
+
+
+
+//////  Users 	/////////////////////////
+db.hcap_admin_module.insert({
+    "module_id" : NumberLong(100000000000001),
+    "module_name" : "users",
+    "module_display_name" : "Users",
+    "module_orders" : 1,
+    "module_icone" : "<i class='fa fa-users'></i>",
+    "first_data" :  [ 
+                        {
+                            "module_id" : NumberLong(100000000100001),
+                            "module_name" : "allusers",
+                            "module_display_name" : "All Users",
+                            "module_orders" : 1
+                        },
+                        {
+                            "module_id" : NumberLong(100000000100002),
+                            "module_name" : "alldeleteduser",
+                            "module_display_name" : "Deleted Users",
+                            "module_orders" : 2.0
+                        }
+						
+                    ]
+});
+
+
+//////  Health solutions 	/////////////////////////
+db.hcap_admin_module.insert({
+    "module_id" : NumberLong(100000000000002),
+    "module_name" : "healthsolutions",
+    "module_display_name" : "Health solutions",
+    "module_orders" : 2,
+    "module_icone" : "<i class='fa fa-heartbeat'></i>",
+    "first_data" :  [ 
+                        {
+                            "module_id" : NumberLong(100000000200001),
+                            "module_name" : "category",
+                            "module_display_name" : "Category",
+                            "module_orders" : 1
+                        },
+                        {
+                            "module_id" : NumberLong(100000002000002),
+                            "module_name" : "subcategory",
+                            "module_display_name" : "Sub-Category",
+                            "module_orders" : 2
+                        }
+                    ]
+});
+
+//////  Shopping /////////////////////////
+db.hcap_admin_module.insert({
+    "module_id" : NumberLong(100000000000003),
+    "module_name" : "shopping",
+    "module_display_name" : "Shopping",
+    "module_orders" : 3,
+    "module_icone" : "<i class='fa fa-shopping-cart'></i>",
+    "first_data" :  [ 
+						{
+							"module_id" : NumberLong(100000003000001),
+							"module_name" : "category",
+							"module_display_name" : "Category",
+							"module_orders" : 1
+						},
+						{
+							"module_id" : NumberLong(100000003000002),
+							"module_name" : "subcategory",
+							"module_display_name" : "Sub-Category",
+							"module_orders" : 2
+						},
+                        {
+                            "module_id" : NumberLong(100000003000003),
+                            "module_name" : "orders",
+                            "module_display_name" : "Orders",
+                            "module_orders" : 3
+                        },
+                        {
+                            "module_id" : NumberLong(100000003000004),
+                            "module_name" : "cancelledorders",
+                            "module_display_name" : "Cancelled orders",
+                            "module_orders" : 4
+                        }
+                    ]
+});
+
+//////  Doctors /////////////////////////
+db.hcap_admin_module.insert({
+    "module_id" : NumberLong(100000000000004),
+    "module_name" : "doctors",
+    "module_display_name" : "Doctors",
+    "module_orders" : 4,
+    "module_icone" : "<i class='fa fa-user-md'></i>",
+    "first_data" :  [ 
+                        {
+                            "module_id" : NumberLong(100000004000001),
+                            "module_name" : "alldoctors",
+                            "module_display_name" : "All Doctors",
+                            "module_orders" : 1
+                        },
+                        {
+                            "module_id" : NumberLong(100000004000002),
+                            "module_name" : "bookedappointments",
+                            "module_display_name" : "Booked Appointments",
+                            "module_orders" : 2
+                        }
+                    ]
+});
+
+//////  Hospitals /////////////////////////
+db.hcap_admin_module.insert({
+    "module_id" : NumberLong(100000000000005),
+    "module_name" : "hospitals",
+    "module_display_name" : "Hospitals",
+    "module_orders" : 5,
+    "module_icone" : "<i class='fa fa-hospital-symbol'></i>",
+    "first_data" :  [ 
+                        {
+                            "module_id" : NumberLong(100000005000001),
+                            "module_name" : "allhospitals",
+                            "module_display_name" : "All Hospitals",
+                            "module_orders" : 1
+                        }
+                    ]
+});
+
+
+
+//////  CMS 	/////////////////////////
+db.hcap_admin_module.insert({
+    "module_id" : NumberLong(100000000000006),
+    "module_name" : "cms",
+    "module_display_name" : "CMS",
+    "module_orders" : 6,
+    "module_icone" : "<i class='fa fa-globe-asia'></i>",
+    "first_data" :  [ 
+                        {
+                            "module_id" : NumberLong(100000000600001),
+                            "module_name" : "aboutus",
+                            "module_display_name" : "About Us",
+                            "module_orders" : 1.0
+                        }, 
+                        {
+                            "module_id" : NumberLong(100000000600002),
+                            "module_name" : "pagebanners",
+                            "module_display_name" : "Page Banners",
+                            "module_orders" : 2.0
+                        }, 
+                        {
+                            "module_id" : NumberLong(100000000600003),
+                            "module_name" : "termconditions",
+                            "module_display_name" : "Terms & Conditions",
+                            "module_orders" : 3.0
+                        }, 
+                        {
+                            "module_id" : NumberLong(100000000600004),
+                            "module_name" : "privacypolices",
+                            "module_display_name" : "Privacy Policies",
+                            "module_orders" : 4.0
+                        }, 
+                        {
+                            "module_id" : NumberLong(100000000600005),
+                            "module_name" : "generaldata",
+                            "module_display_name" : "General Data",
+                            "module_orders" : 5.0
+                        }, 
+                        {
+                            "module_id" : NumberLong(100000000600006),
+                            "module_name" : "disclaimer",
+                            "module_display_name" : "Disclaimer",
+                            "module_orders" : 6.0
+                        }, 
+                        {
+                            "module_id" : NumberLong(100000000600007),
+                            "module_name" : "partners",
+                            "module_display_name" : "Partners",
+                            "module_orders" : 7.0
+                        },
+                        {
+                            "module_id" : NumberLong(100000000600008),
+                            "module_name" : "emailtemplates",
+                            "module_display_name" : "Email Templates",
+                            "module_orders" : 8.0
+                        },
+                        {
+                            "module_id" : NumberLong(100000000600009),
+                            "module_name" : "notifications",
+                            "module_display_name" : "Notifications",
+                            "module_orders" : 9.0
+                        }
+                    ]
+});
+
+
+
+//////  SUB ADMINS	//////////////////////
+db.hcap_admin_module.insert({
+    "module_id" : NumberLong(100000000000007),
+    "module_name" : "subadmin",
+    "module_display_name" : "Sub Admin",
+    "module_orders" : 7,
+    "module_icone" : "<i class='fa fa-user-cog'></i>",
+    "first_data" :  [ 
+						
+                        {
+                            "module_id" : NumberLong(100000007000001),
+                            "module_name" : "department",
+                            "module_display_name" : "Department",
+                            "module_orders" : 1
+                        },
+                        {
+                            "module_id" : NumberLong(100000007000002),
+                            "module_name" : "designation",
+                            "module_display_name" : "Designation",
+                            "module_orders" : 2
+                        },
+                        {
+                            "module_id" : NumberLong(100000007000003),
+                            "module_name" : "users",
+                            "module_display_name" : "Users",
+                            "module_orders" : 3
+                        }       
+                    ]
+});
+
+db.hcap_admin_module.update({"module_id":NumberLong(100000000000007)}, {$set: {"module_icone":"<i class='fa fa-shopping-cart'></i>"}})
+
